@@ -6,12 +6,14 @@ import javax.persistence.*;
 @Table(name = "products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Column(name = "description")
+    @Column(name = "description", length = 10000)
     private String description;
+    @Column(name = "image_url", length = 500)
     private String image_url;
+    @Column(name = "image_thumbnail_url", length = 500)
     private String image_thumbnail_url;
 
     public Long getId() {
